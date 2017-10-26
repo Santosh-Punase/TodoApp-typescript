@@ -15,15 +15,16 @@ window.onload = function(){
         }
 
         
-addBtn.onclick = function(){
+    addBtn.onclick = function(){
         var task = input.value;
 
         addTodo(n_id, task, "active");   
         
-        var lst = document.getElementById('list');
+        var lst = document.getElementById('todo_div_id');
         var li = document.createElement("li");
         var txt = document.createTextNode(task);
         li.appendChild(txt);
+        input.value="";
 
         if(task==='')
             alert("Enter some task !!!");

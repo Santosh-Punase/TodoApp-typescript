@@ -1,6 +1,32 @@
 *{
     box-shadow: border-box;
 }
+/*
 html{
     background-color: #434343;
+}
+*/
+
+div.todoStatusACTIVE{
+    color : blue;
+}
+div.todoStatusCOMPLETE{
+    color : green;
+    text-decoration: line-through;
+}
+div.todoStatusDELETE{
+    color : red;
+    text-decoration: line-through;
+}
+
+.header {
+    margin: 10px 15px;
+    text-align: center;
+}
+#warning{
+    display: none;
+}
+
+.w3-round{
+    min-height: 200px;
 }

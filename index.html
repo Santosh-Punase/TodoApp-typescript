@@ -1,22 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>My ToDo App</title>
+    <!-- bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
     <link href="style.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+
 </head>
+
 <body>
+
     <div id="divheader" class="header">
-        <h1>My ToDO App</h1>
-        <input type="text" id="addInput" placeholder="Add tasks to do...">
-        <Button><span id="BtnAdd">Add</span></Button>
-    </div>
+        <div class="jumbotron">
+            <h1 class="display-3">My Todos</h1>
+            <hr class="my-4">
+            <div class="row justify-content-md-center no-gutters">
+                <div class="col-7">
+                    <input type="text" class="form-control" id="addInput" placeholder="Add New Task..." required>
+                    <div class="alert alert-danger col-3" id="warning" role="alert">
+                        Enter some task!
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-success" id="BtnAdd" type="submit">Add Task</button>
+                </div>
+            </div>
+        </div>
 
-    <ul id="list">
+        <div class="w3-container">
+            <div class="w3-row-padding">
+                <div class="w3-col m4">
+                    <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+                        <element class="w3-button w3-block w3-theme-l1 ">
+                            <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Completed Todos
+                </button>
+                    <div id="completed_todos" class="w3-hide w3-container">
+                        <div class="w3-container w3-padding">
+                            <table id="todo_complete_div_id" width="100%"></table>
+                        </div>
+                    </div>
+                </div>
+                </div>
 
-    </ul>
+                <div class="w3-col m4">
+                <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+                    <element class="w3-button w3-block w3-theme-l1 ">
+                        <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Active Todos
+                    </element>
 
-    <script src="todoTask.js"></script>
-    <script src="script.js"></script>
+                    <table id="todo_div_id" width="100%"></table>
+                </div>
+            </div>
+
+                <div class="w3-col m4">
+                    <div  class="w3-container w3-card-2 w3-white w3-round w3-margin">
+                        <element class="w3-button w3-block w3-theme-l1 ">
+                            <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Deleted Todos
+    
+                    <div id="Deleted_todos" class="w3-hide w3-container">
+                        <div class="w3-container w3-padding">
+                            <div id="todo_delete_div_id"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <ul id="list">
+
+        </ul>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+
+        <script src="todoTask.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
