@@ -11,7 +11,8 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -40,19 +41,17 @@
                     <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
                         <element class="w3-button w3-block w3-theme-l1 ">
                             <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Completed Todos
-                </button>
-                    <div id="completed_todos" class="w3-hide w3-container">
-                        <div class="w3-container w3-padding">
-                            <table id="todo_complete_div_id" width="100%"></table>
-                        </div>
-                    </div>
+                        </element>
+                    
+                    <table id="todo_complete_div_id" width="100%"></table>
+                       
                 </div>
                 </div>
 
                 <div class="w3-col m4">
                 <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
                     <element class="w3-button w3-block w3-theme-l1 ">
-                        <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Active Todos
+                        <i class="fa fa-calendar-plus-o fa-fw w3-margin-right"></i> Active Todos
                     </element>
 
                     <table id="todo_div_id" width="100%"></table>
@@ -62,12 +61,10 @@
                 <div class="w3-col m4">
                     <div  class="w3-container w3-card-2 w3-white w3-round w3-margin">
                         <element class="w3-button w3-block w3-theme-l1 ">
-                            <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Deleted Todos
+                            <i class="fa fa-calendar-times-o fa-fw w3-margin-right"></i> Deleted Todos
+                        </element>
     
-                    <div id="Deleted_todos" class="w3-hide w3-container">
-                        <div class="w3-container w3-padding">
-                            <div id="todo_delete_div_id"></div>
-                        </div>
+                        <table id="todo_delete_div_id"></table>
                     </div>
                 </div>
             </div>
@@ -88,6 +85,7 @@
             crossorigin="anonymous"></script>
 
         <script src="todoTask.js"></script>
+        <script src="view.js"></script>
         <script src="script.js"></script>
 </body>
 

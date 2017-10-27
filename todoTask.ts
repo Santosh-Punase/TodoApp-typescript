@@ -1,40 +1,59 @@
 
 
 interface task {
-    id : number,
+    id ?: number,
     title : string,
     status : string
 }
 
 class Todo{
-    
-    public id : number;
-    public title : string;
-    public status : string;
-
-    constructor(){  
+    data:task[];
+    public test(){
+        alert("in todo");
     }
+    
+    constructor(){  
+        this.data = [];
+    }
+    
 
     addTask(task : task){
-        this.id = task.id;
-        this.title = task.title;
-        this.status = task.status;
+        this.data.push(task);
     }
-    getTask(): task{
-        return {id : this.id, title : this.title, status : this.status};
+    getTask(id:number): task{
+        return this.data[id-1];
+       // return {id : this.id, title : this.title, status : this.status};
     }
+
+    completeTask(id:number) {
+        this.data[id].status="COMPLETE";
+    }
+    activeTask(id:number) {
+        this.data[id].status="ACTIVE";
+    }
+    deleteTask(id:number) {
+        this.data[id].status="DELETE";
+    }
+
 }
 
 var todos = new Todo();
 
-function addTodo(id:number, title:string,status:string){
+function getAllTasks() {
+    return todos.data;
+}
+
+function addTodo(title:string,status:string){
     todos.addTask({
-        id : id,
+        id : todos.data.length,
         title : title,
         status : status
     });
+    console.log(todos.data);
 }
 
-function getTodo():task {
-    return todos.getTask();
+function getTodo(id:number) {
+    return todos.data[id];
 }
+
+

@@ -1,39 +1,68 @@
-window.onload = function(){
-    var input = document.getElementById('addInput');
-    var addBtn = document.getElementById('BtnAdd');
-    
-    var l_id = localStorage.getItem("id");
-    var n_id;
-    if(l_id==null){
-        localStorage.setItem("id","1");
-        n_id = 1;
-    }
-        
-    else {
-           n_id = parseInt(localStorage.getItem('id')) + 1;
-           localStorage.setItem("id",n_id);
-        }
+var v;
+var input;
+var addBtn;
+var n_id = 0;
 
-        
-    addBtn.onclick = function(){
+window.onload = function () {
+    v = new View();
+    input = document.getElementById('addInput');
+    addBtn = document.getElementById('BtnAdd');
+
+    var storedData = JSON.parse(localStorage.getItem('data'));
+    console.log(storedData);
+    storedData.forEach(element => {
+        console.log(element);
+        console.log(element.id);
+        console.log(element.title);
+        v.addElement(element.id,element.title, element.status);
+    });
+
+
+    addBtn.onclick = function () {
         var task = input.value;
+        addTodo(task, "ACTIVE");
 
-        addTodo(n_id, task, "active");   
-        
-        var lst = document.getElementById('todo_div_id');
-        var li = document.createElement("li");
-        var txt = document.createTextNode(task);
-        li.appendChild(txt);
-        input.value="";
+        input.value = "";
 
-        if(task==='')
+        if (task === '')
             alert("Enter some task !!!");
-        else
-            lst.appendChild(li);
+        else {
+            v.addElement(n_id, task, "ACTIVE");
+            data = getAllTasks();
+            var jdata = JSON.stringify(data);
+            localStorage.setItem('data',jdata);
+        }
+        n_id++;
 
-        
-        localStorage.setItem("data",JSON.stringify(getTodo()));        
-        console.log("added");
+        console.log(localStorage.getItem('data'));
+      //  console.log("added");
     };
-    
 }
+
+function updateList(id){
+    var oldItem = document.getElementById("data-id-" + id);
+    
+        v.addElement(id, todos.data[id].title, todos.data[id].status);
+        oldItem.remove();
+        
+        var data = getAllTasks();
+        var jdata = JSON.stringify(data);
+        localStorage.setItem('data',jdata);
+        
+        console.log(localStorage.getItem('data'));
+}
+
+function completeTask(id) {
+    todos.completeTask(id);
+    updateList(id);
+};
+
+function activeTask(id) {
+    todos.activeTask(id);
+    updateList(id);
+};
+
+function deleteTask(id) {
+    todos.deleteTask(id);
+    updateList(id);
+};
