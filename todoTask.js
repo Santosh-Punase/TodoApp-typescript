@@ -33,7 +33,6 @@ function addTodo(title, status) {
         title: title,
         status: status
     });
-    console.log(todos.data);
 }
 function getTodo(id) {
     return todos.data[id];

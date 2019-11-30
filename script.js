@@ -8,15 +8,10 @@ window.onload = function () {
     input = document.getElementById('addInput');
     addBtn = document.getElementById('BtnAdd');
 
-    var storedData = JSON.parse(localStorage.getItem('data'));
-    console.log(storedData);
+    var storedData = JSON.parse(localStorage.getItem('data')) || [];
     storedData.forEach(element => {
-        console.log(element);
-        console.log(element.id);
-        console.log(element.title);
         v.addElement(element.id,element.title, element.status);
     });
-
 
     addBtn.onclick = function () {
         var task = input.value;
@@ -24,7 +19,7 @@ window.onload = function () {
 
         input.value = "";
 
-        if (task === '')
+        if (!task)
             alert("Enter some task !!!");
         else {
             v.addElement(n_id, task, "ACTIVE");
@@ -34,8 +29,6 @@ window.onload = function () {
         }
         n_id++;
 
-        console.log(localStorage.getItem('data'));
-      //  console.log("added");
     };
 }
 
@@ -49,7 +42,6 @@ function updateList(id){
         var jdata = JSON.stringify(data);
         localStorage.setItem('data',jdata);
         
-        console.log(localStorage.getItem('data'));
 }
 
 function completeTask(id) {
