@@ -10,7 +10,7 @@ This is a simple Todo application made using TypseScript.
 
 ## Live Demo
 
-Live Demo is hosted using [Github pages](https://santosh-punase.github.io/TodoApp-typescript//)
+Live Demo is hosted using [Github pages](https://santosh-punase.github.io/TodoApp-typescript)
 
 
 ## Built With  :heart:
